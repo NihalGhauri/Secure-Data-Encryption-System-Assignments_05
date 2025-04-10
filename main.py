@@ -386,7 +386,7 @@ def get_database():
         if not connection_string:
             st.error("MongoDB connection string not found in environment variables")
             try:
-                connection_string = "mongodb+srv://shelby42202:sZs2w5MNmG0duDsk@cluster0.jqyqlmx.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+               connection_string = st.secrets["MONGODB_URI"]
             except:
                 connection_string = "mongodb+srv://yourusername:yourpassword@cluster0.mongodb.net/"
                 st.error("Please set up your MongoDB connection string in .env file or Streamlit secrets")
